@@ -1,0 +1,51 @@
+.trafic-light {
+  width: 190px;
+  margin: auto;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  .light {
+    padding: 20px;
+    .content {
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+      opacity: 0.5;
+    }
+    &.green-light {
+      .content {
+        background: green;
+      }
+    }
+    &.red-light {
+      .content {
+        background: red;
+      }
+    }
+    &.yellow-light {
+      .content {
+        background: yellow;
+      }
+    }
+    &.active {
+      .content {
+        opacity: 1;
+      }
+    }
+    &.flash {
+      -webkit-animation: .5s linear 0s infinite alternate flash;
+      animation: .5s linear 0s infinite alternate flash;
+    }
+    @-webkit-keyframes flash {
+      0% { opacity: 0 }
+      50% { color: 0.5 }
+      100% { color: 1 }
+    }
+    @keyframes flash {
+      0% { opacity: 0 }
+      50% { color: 0.5 }
+      100% { color: 1 }
+    }
+  }
+}
